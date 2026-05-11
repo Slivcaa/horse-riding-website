@@ -4,6 +4,7 @@ import './index.css'
 const horses = [
   {
     name: 'Bella',
+     image: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=700&q=80',
     breed: {
       en: 'Czech Warmblood',
       ru: 'Чешский теплокровный',
@@ -23,6 +24,7 @@ const horses = [
 
   {
     name: 'Atlas',
+    image: 'https://images.unsplash.com/photo-1606107869722-d5cbadabe2f0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     breed: {
       en: 'Friesian Mix',
       ru: 'Фризская смесь',
@@ -42,6 +44,7 @@ const horses = [
 
   {
     name: 'Luna',
+    image: 'https://images.unsplash.com/photo-1450052590821-8bf91254a353?auto=format&fit=crop&w=700&q=80',
     breed: {
       en: 'Haflinger',
       ru: 'Хафлингер',
@@ -135,7 +138,9 @@ function App() {
         <div className="horseGrid">
           {horses.map((horse) => (
             <article className="horseCard" key={horse.name}>
-              <div className="horseImage"></div>
+              <div className="horseImage">
+  <img src={horse.image} alt={horse.name} />
+</div>
               <h3>{horse.name}</h3>
               <p>
                 <strong>{t('breed')}:</strong> {horse.breed[i18n.language]}

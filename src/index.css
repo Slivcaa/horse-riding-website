@@ -188,7 +188,14 @@ h3 {
   height: 220px;
   margin-bottom: 22px;
   border-radius: 22px;
+  overflow: hidden;
   background: linear-gradient(135deg, #c9b28a, #65704d);
+}
+
+.horseImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .locationSection {
