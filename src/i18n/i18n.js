@@ -24,9 +24,18 @@ i18n.use(initReactI18next).init({
         forestTitle: 'Forest trail rides',
         forestText:
           'Slow peaceful rides through nature with an experienced guide.',
-        photoshootTitle: 'Horse photoshoots',
-        photoshootText:
-          'Romantic, family or pregnancy photoshoots with horses.',
+       photoshootTitle: 'Horse photoshoots',
+photoshootText:
+  'Romantic, family or pregnancy photoshoots with horses.',
+
+photoshootEyebrow: 'Photoshoots',
+photoshootMainTitle: 'Magical photoshoots with horses',
+photoshootMainText:
+  'Create elegant memories with our calm horses in a natural countryside setting.',
+photoshootItem1: 'Pregnancy photoshoot',
+photoshootItem2: 'Couple photoshoot',
+photoshootItem3: 'Family photoshoot',
+photoshootItem4: 'Fairy-tale portrait',
 
         horsesEyebrow: 'Our horses',
         horsesTitle: 'Meet the stars of our stable',
@@ -73,8 +82,17 @@ i18n.use(initReactI18next).init({
           'Bezpečné soukromé lekce pro začátečníky i jezdce, kteří se k jízdě vracejí.',
         forestTitle: 'Vyjížďky do lesa',
         forestText: 'Klidné vyjížďky přírodou se zkušeným průvodcem.',
-        photoshootTitle: 'Focení s koňmi',
-        photoshootText: 'Romantické, rodinné nebo těhotenské focení s koňmi.',
+       photoshootTitle: 'Focení s koňmi',
+photoshootText: 'Romantické, rodinné nebo těhotenské focení s koňmi.',
+
+photoshootEyebrow: 'Focení',
+photoshootMainTitle: 'Kouzelné focení s koňmi',
+photoshootMainText:
+  'Vytvořte si elegantní vzpomínky s našimi klidnými koňmi v přírodním prostředí.',
+photoshootItem1: 'Těhotenské focení',
+photoshootItem2: 'Párové focení',
+photoshootItem3: 'Rodinné focení',
+photoshootItem4: 'Pohádkový portrét',
 
         horsesEyebrow: 'Naši koně',
         horsesTitle: 'Poznejte hvězdy naší stáje',
@@ -122,10 +140,18 @@ i18n.use(initReactI18next).init({
         forestTitle: 'Прогулки по лесу',
         forestText:
           'Спокойные прогулки на природе с опытным сопровождающим.',
-        photoshootTitle: 'Фотосессии с лошадьми',
-        photoshootText:
-          'Романтические, семейные или беременные фотосессии с лошадьми.',
+       photoshootTitle: 'Фотосессии с лошадьми',
+photoshootText:
+  'Романтические, семейные или беременные фотосессии с лошадьми.',
 
+photoshootEyebrow: 'Фотосессии',
+photoshootMainTitle: 'Атмосферные фотосессии с лошадьми',
+photoshootMainText:
+  'Создайте красивые воспоминания с нашими спокойными лошадьми на фоне природы.',
+photoshootItem1: 'Беременная фотосессия',
+photoshootItem2: 'Фотосессия пары',
+photoshootItem3: 'Семейная фотосессия',
+photoshootItem4: 'Сказочный портрет',
         horsesEyebrow: 'Наши лошади',
         horsesTitle: 'Познакомьтесь со звёздами нашей конюшни',
         breed: 'Порода',

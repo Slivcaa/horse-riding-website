@@ -247,6 +247,40 @@ textarea {
   cursor: pointer;
 }
 
+.photoshootSection {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 40px;
+  align-items: center;
+  background: #4d5d40;
+  color: #fffaf0;
+  padding: 48px;
+  border-radius: 36px;
+}
+
+.photoshootSection h2,
+.photoshootSection .eyebrow {
+  color: #fffaf0;
+}
+
+.photoshootSection p {
+  color: rgba(255, 250, 240, 0.78);
+  line-height: 1.7;
+}
+
+.photoshootList {
+  display: grid;
+  gap: 12px;
+}
+
+.photoshootList span {
+  background: rgba(255, 250, 240, 0.12);
+  border: 1px solid rgba(255, 250, 240, 0.18);
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-weight: 700;
+}
+
 @media (max-width: 850px) {
   .header {
     border-radius: 28px;
@@ -263,6 +297,11 @@ textarea {
   .hero,
   .locationSection {
     grid-template-columns: 1fr;
+  }
+
+    .photoshootSection {
+    grid-template-columns: 1fr;
+    padding: 28px;
   }
 
 

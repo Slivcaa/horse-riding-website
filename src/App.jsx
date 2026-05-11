@@ -131,6 +131,21 @@ function App() {
         </div>
       </section>
 
+<section className="section photoshootSection">
+  <div>
+    <p className="eyebrow">{t('photoshootEyebrow')}</p>
+    <h2>{t('photoshootMainTitle')}</h2>
+    <p>{t('photoshootMainText')}</p>
+  </div>
+
+  <div className="photoshootList">
+    <span>{t('photoshootItem1')}</span>
+    <span>{t('photoshootItem2')}</span>
+    <span>{t('photoshootItem3')}</span>
+    <span>{t('photoshootItem4')}</span>
+  </div>
+</section>
+
       <section className="section horsesSection" id="horses">
         <p className="eyebrow">{t('horsesEyebrow')}</p>
         <h2>{t('horsesTitle')}</h2>
