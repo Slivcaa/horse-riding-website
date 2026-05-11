@@ -1,61 +1,99 @@
+import { useTranslation } from 'react-i18next'
 import './index.css'
 
 const horses = [
   {
     name: 'Bella',
-    breed: 'Czech Warmblood',
-    origin: 'South Bohemia',
-    likes: 'Carrots, apples and calm walks',
+    breed: {
+      en: 'Czech Warmblood',
+      ru: 'Чешский теплокровный',
+      cz: 'Český teplokrevník',
+    },
+    origin: {
+      en: 'South Bohemia',
+      ru: 'Южная Богемия',
+      cz: 'Jižní Čechy',
+    },
+    likes: {
+      en: 'Carrots, apples and calm walks',
+      ru: 'Морковь, яблоки и спокойные прогулки',
+      cz: 'Mrkev, jablka a klidné procházky',
+    },
   },
+
   {
     name: 'Atlas',
-    breed: 'Friesian Mix',
-    origin: 'Moravia',
-    likes: 'Fresh grass and forest rides',
+    breed: {
+      en: 'Friesian Mix',
+      ru: 'Фризская смесь',
+      cz: 'Fríský mix',
+    },
+    origin: {
+      en: 'Moravia',
+      ru: 'Моравия',
+      cz: 'Morava',
+    },
+    likes: {
+      en: 'Fresh grass and forest rides',
+      ru: 'Свежую траву и прогулки по лесу',
+      cz: 'Čerstvou trávu a lesní vyjížďky',
+    },
   },
+
   {
     name: 'Luna',
-    breed: 'Haflinger',
-    origin: 'Austria',
-    likes: 'Bananas and gentle cuddles',
+    breed: {
+      en: 'Haflinger',
+      ru: 'Хафлингер',
+      cz: 'Hafling',
+    },
+    origin: {
+      en: 'Austria',
+      ru: 'Австрия',
+      cz: 'Rakousko',
+    },
+    likes: {
+      en: 'Bananas and gentle cuddles',
+      ru: 'Бананы и ласку',
+      cz: 'Banány a mazlení',
+    },
   },
 ]
 
 function App() {
+  const { t, i18n } = useTranslation()
+
   return (
     <main>
       <header className="header">
         <div className="logo">Equora</div>
 
         <nav>
-          <a href="#horses">Horses</a>
-          <a href="#experiences">Experiences</a>
-          <a href="#location">Location</a>
-          <a href="#booking">Booking</a>
+          <a href="#horses">{t('navHorses')}</a>
+          <a href="#experiences">{t('navExperiences')}</a>
+          <a href="#location">{t('navLocation')}</a>
+          <a href="#booking">{t('navBooking')}</a>
         </nav>
 
         <div className="languages">
-          <button>EN</button>
-          <button>CZ</button>
-          <button>RU</button>
+          <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+          <button onClick={() => i18n.changeLanguage('cz')}>CZ</button>
+          <button onClick={() => i18n.changeLanguage('ru')}>RU</button>
         </div>
       </header>
 
       <section className="hero">
         <div className="heroText">
-          <p className="eyebrow">Horse riding club</p>
-          <h1>Ride, connect and create memories with horses</h1>
-          <p className="subtitle">
-            Private horse riding lessons, peaceful countryside rides and dreamy
-            photoshoots with our beautiful horses.
-          </p>
+          <p className="eyebrow">{t('eyebrowHero')}</p>
+          <h1>{t('heroTitle')}</h1>
+          <p className="subtitle">{t('heroSubtitle')}</p>
 
           <div className="heroButtons">
             <a href="#booking" className="primaryButton">
-              Book a ride
+              {t('bookRide')}
             </a>
             <a href="#horses" className="secondaryButton">
-              Meet our horses
+              {t('meetHorses')}
             </a>
           </div>
         </div>
@@ -69,30 +107,30 @@ function App() {
       </section>
 
       <section className="section" id="experiences">
-        <p className="eyebrow">What we offer</p>
-        <h2>Experiences for beginners, families and dreamers</h2>
+        <p className="eyebrow">{t('offerEyebrow')}</p>
+        <h2>{t('offerTitle')}</h2>
 
         <div className="cards">
           <article className="card">
-            <h3>Riding lessons</h3>
-            <p>Safe private lessons for beginners and returning riders.</p>
+            <h3>{t('lessonsTitle')}</h3>
+            <p>{t('lessonsText')}</p>
           </article>
 
           <article className="card">
-            <h3>Forest trail rides</h3>
-            <p>Slow peaceful rides through nature with an experienced guide.</p>
+            <h3>{t('forestTitle')}</h3>
+            <p>{t('forestText')}</p>
           </article>
 
           <article className="card">
-            <h3>Horse photoshoots</h3>
-            <p>Romantic, family or pregnancy photoshoots with horses.</p>
+            <h3>{t('photoshootTitle')}</h3>
+            <p>{t('photoshootText')}</p>
           </article>
         </div>
       </section>
 
       <section className="section horsesSection" id="horses">
-        <p className="eyebrow">Our horses</p>
-        <h2>Meet the stars of our stable</h2>
+        <p className="eyebrow">{t('horsesEyebrow')}</p>
+        <h2>{t('horsesTitle')}</h2>
 
         <div className="horseGrid">
           {horses.map((horse) => (
@@ -100,13 +138,13 @@ function App() {
               <div className="horseImage"></div>
               <h3>{horse.name}</h3>
               <p>
-                <strong>Breed:</strong> {horse.breed}
+                <strong>{t('breed')}:</strong> {horse.breed[i18n.language]}
               </p>
               <p>
-                <strong>Origin:</strong> {horse.origin}
+                <strong>{t('origin')}:</strong> {horse.origin[i18n.language]}
               </p>
               <p>
-                <strong>Loves:</strong> {horse.likes}
+                <strong>{t('loves')}:</strong> {horse.likes[i18n.language]}
               </p>
             </article>
           ))}
@@ -115,36 +153,35 @@ function App() {
 
       <section className="section locationSection" id="location">
         <div>
-          <p className="eyebrow">Where we are</p>
-          <h2>Countryside riding near Prague</h2>
-          <p>
-            Visit our calm riding club surrounded by fields, forest paths and
-            peaceful nature. Free parking is available for all visitors.
-          </p>
+          <p className="eyebrow">{t('locationEyebrow')}</p>
+          <h2>{t('locationTitle')}</h2>
+          <p>{t('locationText')}</p>
         </div>
 
         <div className="locationBox">
-          <p>📍 Prague countryside, Czech Republic</p>
-          <p>🕘 Open daily by appointment</p>
-          <p>🚗 Parking available</p>
+          <p>📍 {t('address')}</p>
+          <p>🕘 {t('open')}</p>
+          <p>🚗 {t('parking')}</p>
         </div>
       </section>
 
       <section className="bookingSection" id="booking">
-        <p className="eyebrow">Book your visit</p>
-        <h2>Ready for your first ride?</h2>
+        <p className="eyebrow">{t('bookingEyebrow')}</p>
+        <h2>{t('bookingTitle')}</h2>
 
         <form className="bookingForm">
-          <input type="text" placeholder="Your name" />
-          <input type="email" placeholder="Email address" />
-          <input type="text" placeholder="Preferred date" />
+          <input type="text" placeholder={t('name')} />
+          <input type="email" placeholder={t('email')} />
+          <input type="text" placeholder={t('date')} />
+
           <select>
-            <option>Riding lesson</option>
-            <option>Forest trail ride</option>
-            <option>Horse photoshoot</option>
+            <option>{t('lessonsTitle')}</option>
+            <option>{t('forestTitle')}</option>
+            <option>{t('photoshootTitle')}</option>
           </select>
-          <textarea placeholder="Tell us more..." />
-          <button type="button">Send request</button>
+
+          <textarea placeholder={t('message')} />
+          <button type="button">{t('send')}</button>
         </form>
       </section>
     </main>
