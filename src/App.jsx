@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import './index.css'
 
@@ -85,7 +86,12 @@ function App() {
         </div>
       </header>
 
-      <section className="hero">
+      <motion.section
+  className="hero"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
         <div className="heroText">
           <p className="eyebrow">{t('eyebrowHero')}</p>
           <h1>{t('heroTitle')}</h1>
@@ -107,27 +113,39 @@ function App() {
             alt="Horse in nature"
           />
         </div>
-      </section>
+     </motion.section>
 
       <section className="section" id="experiences">
         <p className="eyebrow">{t('offerEyebrow')}</p>
         <h2>{t('offerTitle')}</h2>
 
         <div className="cards">
-          <article className="card">
+          <motion.article
+  className="card"
+  whileHover={{ y: -8 }}
+  transition={{ type: 'spring', stiffness: 220 }}
+>
             <h3>{t('lessonsTitle')}</h3>
             <p>{t('lessonsText')}</p>
-          </article>
+          </motion.article>
 
-          <article className="card">
+          <motion.article
+  className="card"
+  whileHover={{ y: -8 }}
+  transition={{ type: 'spring', stiffness: 220 }}
+>
             <h3>{t('forestTitle')}</h3>
             <p>{t('forestText')}</p>
-          </article>
+          </motion.article>
 
-          <article className="card">
+          <motion.article
+  className="card"
+  whileHover={{ y: -8 }}
+  transition={{ type: 'spring', stiffness: 220 }}
+>
             <h3>{t('photoshootTitle')}</h3>
             <p>{t('photoshootText')}</p>
-          </article>
+          </motion.article>
         </div>
       </section>
 
