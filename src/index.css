@@ -281,6 +281,12 @@ textarea {
   font-weight: 700;
 }
 
+.successMessage {
+  margin: 8px 0 0;
+  color: #4d5d40;
+  font-weight: 800;
+}
+
 @media (max-width: 850px) {
   .header {
     border-radius: 28px;

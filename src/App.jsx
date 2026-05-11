@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import './index.css'
@@ -66,7 +67,7 @@ const horses = [
 
 function App() {
   const { t, i18n } = useTranslation()
-
+  const [isSent, setIsSent] = useState(false)
   return (
     <main>
       <header className="header">
@@ -219,7 +220,11 @@ function App() {
           </select>
 
           <textarea placeholder={t('message')} />
-          <button type="button">{t('send')}</button>
+          <button type="button" onClick={() => setIsSent(true)}>
+  {t('send')}
+</button>
+
+{isSent && <p className="successMessage">{t('successMessage')}</p>}
         </form>
       </section>
     </main>
