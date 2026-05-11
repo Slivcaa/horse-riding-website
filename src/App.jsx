@@ -76,9 +76,9 @@ function App() {
         </nav>
 
         <div className="languages">
-          <button onClick={() => i18n.changeLanguage('en')}>EN</button>
-          <button onClick={() => i18n.changeLanguage('cz')}>CZ</button>
-          <button onClick={() => i18n.changeLanguage('ru')}>RU</button>
+         <button className={i18n.language === 'en' ? 'active' : ''} onClick={() => i18n.changeLanguage('en')}>EN</button>
+<button className={i18n.language === 'cz' ? 'active' : ''} onClick={() => i18n.changeLanguage('cz')}>CZ</button>
+<button className={i18n.language === 'ru' ? 'active' : ''} onClick={() => i18n.changeLanguage('ru')}>RU</button>
         </div>
       </header>
 
